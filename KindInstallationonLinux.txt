@@ -1,0 +1,19 @@
+Kind Installation
+
+1) curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-linux-amd64
+2) chmod +x ./kind
+3) sudo mv ./kind /usr/local/bin/kind
+4) kind create cluster
+
+Kubectl Installation
+
+1) curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+2) curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+3) echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+4) sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+Validation
+
+1) kubectl cluster-info --context kind-kind
+2) kubectl get pods --all-namespaces
+

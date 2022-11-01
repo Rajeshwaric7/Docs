@@ -1,16 +1,10 @@
 Download the setup file from https://git-scm.com/download/win and configure it< Defualt master repository has been changed to Main>
-
-
 Open Git Command Prompt
 
 git --version
-
 git config --global user.name "Rajeshwaric7"
-
 git config --global user.email "rajeshwari.c1996@gmail.com"
-
 git config --list
-
 git init
 git add . < Commits all files present in that folder>
 git status 

@@ -6,12 +6,12 @@ Docker should be installed
 or
 Hyper-V should be installed (Apps$Features-> Hyperv)
 
-1) Download and run the installer for the latest release Or if using PowerShell, use this command:
+#Download and run the installer for the latest release Or if using PowerShell, use this command:
 
 New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
 Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
 
-2)Add the minikube.exe binary to your PATH. Make sure to run PowerShell as Administrator.
+#Add the minikube.exe binary to your PATH. Make sure to run PowerShell as Administrator.
 
 $oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
 if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
@@ -19,24 +19,22 @@ if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
 }
 If you used a terminal (like powershell) for the installation, please close the terminal and reopen it before running minikube.
 
-3)Post installation, check if Minikube and Kubectl is working in Terminal< Once Minikube is installed, Kubectl will be installed automatically so no need to install it separetly)
+#Post installation, check if Minikube and Kubectl is working in Terminal< Once Minikube is installed, Kubectl will be installed automatically so no need to install it separetly)
 
-4) Start the cluster : minikube start 
+Start the cluster : minikube start 
 
-5) Minikube status
+#Minikube status
 
 PS C:\WINDOWS\system32> minikube status
 minikube
 type: Control Plane
 host: Running
 kubelet: Running
-apiserver: Stopped
+apiserver: Running
 kubeconfig: Configured
 
-6)kubectl version < Client and server version should be present>
+#kubectl version < Client and server version should be present>
 
-7)kubectl get nodes
-
-8)Minikube delete < Cluster Deletion>
-
-9)
+#kubectl get nodes
+#Minikube delete < Cluster Deletion>
+# No need to install kubeclt separetly

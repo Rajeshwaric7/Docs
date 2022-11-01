@@ -37,4 +37,3 @@ kubeconfig: Configured
 
 #kubectl get nodes
 #Minikube delete < Cluster Deletion>
-# No need to install kubeclt separetly

@@ -1,0 +1,19 @@
+kubectl get nodes
+kubectl get services
+kubectl get deployment
+kubectl get pod {Pod Name will be <DeploymentName>-<replicaSet ID>-<its Own ID>}
+kubectl get replicaset
+kubectl create deployment nginx-1stdeployment --image=nginx
+kubectl edit deployment nginx-1stdeployment < Changes to any such image etc should be done in deployment and not in pod>
+#old pod gets terminated and new POD gets created
+PS C:\WINDOWS\system32> kubectl get replicaset 
+NAME                             DESIRED   CURRENT   READY   AGE
+nginx-1stdeployment-554bfb6795   1         1         1       2m17s
+nginx-1stdeployment-5978cbbbf7   0         0         0       60m
+
+kubectl logs nginx-1stdeployment-554bfb6795-6frlv<POD Name>
+kubectl describe pod <POD Name> < additonal info with events>
+kubectl exec -it mongo-depl-8fbdb868c-n4xlq -- bin/bash < Interactive terminal ofrunning container with root user login>
+kubectl delete deployment <Deployment Name> { to delete pod and its underneath replicaset}
+kubectl apply -f config.yaml < Creating POD by passing the yaml as a parameter and yaml file can be edited where K8 updates it instead of deploying newly >
+kubectl delete -f <Filename>

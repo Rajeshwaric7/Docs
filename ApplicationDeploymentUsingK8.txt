@@ -1,0 +1,55 @@
+Web reqest->    Mongoexpress External service -> MExpress POD -> Mongo DB Internal Service-> MDb POD
+(Mongo express)
+
+kubectl get all
+
+echo -n 'root' | base64 <encoding the credentials in string>
+      Or
+$Text = ‘This is a secret and should be hidden’
+$Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text)  <Windows>
+$EncodedText =[Convert]::ToBase64String($Bytes)
+$EncodedText
+
+kubectl apply -f .\Mongo-secret.yaml <secret creation>
+
+kubectl get secret
+
+kubectl apply -f mongo.yaml  <Deployment creation>
+ 
+kubectl get all
+
+Kubectl get pod --watch
+
+kubectl describe pod mongodb-deployment-844789cd64-n76ft
+
+kubectl apply -f mongo.yaml < Service Creation using same yaml file and --- inside yaml file indicates separation of a file>
+
+kubectl get service
+
+kubectl describe service mongodb-service < Validate whether service is attached to right pod : Endpoints 172.17.0.6:27017>
+
+kubectl get pod -o wide <To get IP address of POD>
+
+kubectl apply -f .\Mongo-configmap.yaml
+
+kubectl apply -f .\Mongo-express.yaml <external service is created>
+
+kubectl get service < cluster IP will be default fro Internal service>
+
+minikube service mongo-express-service < give a URL to external service in minikube and node port is 30000>
+----------|-----------------------|-------------|----------------------------|
+| NAMESPACE |         NAME          | TARGET PORT |            URL             |
+|-----------|-----------------------|-------------|----------------------------|
+| default   | mongo-express-service |        8081 | http://172.26.38.160:30000 |
+|-----------|-----------------------|-------------|----------------------------
+
+kubectl debugging commands
+
+kubectl describe pod mongodb-deployment-xxxxxx
+kubectl describe service mongodb-service
+kubectl logs mongo-express-xxxxxx
+
+
+
+
+

@@ -1,0 +1,24 @@
+Namespace:
+
+kubectl get namespace
+kubectl cluster-info
+kubectl api-resources --namespaced=false <List Non namespace components>
+kubectl api-resources --namespaced=True
+kubectl create namespace my-namespace
+kubectl apply -f Mongo-secret.yaml --namespace=my-namespace <Another way is to mention in configuration file>
+choco install kubens kubectx
+kubectx
+kubens
+ 
+kubens my-namespace
+✔ Active namespace is "my-namespace"
+
+kubectl config get-contexts  <which namespace and cluster am in presently>
+
+Ingress Configuration:
+
+minikube addons enable ingress <To enable/starts default nginx k8 Ingress controller in minikube>
+
+kubectl get pods -n ingress-nginx <Validate ingress controller>
+
+minikube dashboard <Enabling minikube dashboard>

@@ -43,7 +43,7 @@ minikube service mongo-express-service < give a URL to external service in minik
 | default   | mongo-express-service |        8081 | http://172.26.38.160:30000 |
 |-----------|-----------------------|-------------|----------------------------
 
-kubectl debugging commands
+kubectl debugging commands:
 
 kubectl describe pod mongodb-deployment-xxxxxx
 kubectl describe service mongodb-service

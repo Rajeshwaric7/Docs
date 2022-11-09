@@ -34,6 +34,7 @@ kubectl apply -f .\Mongo-configmap.yaml
 
 kubectl apply -f .\Mongo-express.yaml <external service is created>
 
+
 kubectl get service < cluster IP will be default fro Internal service>
 
 minikube service mongo-express-service < give a URL to external service in minikube and node port is 30000>

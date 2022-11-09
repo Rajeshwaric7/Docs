@@ -17,3 +17,4 @@ Validation
 kubectl cluster-info --context kind-kind
 kubectl get pods --all-namespaces
 
+
